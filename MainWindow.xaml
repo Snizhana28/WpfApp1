@@ -6,7 +6,155 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="1080" Width="1920" WindowStartupLocation="CenterScreen" MinHeight="800" MinWidth="500" WindowState="Maximized">
+    <Window.Background>
+        <LinearGradientBrush StartPoint="0,0">
+            <GradientStop Color="#FF3A3A" Offset="0" />
+            <GradientStop Color="#E44040" Offset="1" />
+        </LinearGradientBrush>
+    </Window.Background>
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <materialDesign:Card Grid.Column="1" Grid.Row="1" UniformCornerRadius="25" materialDesign:ShadowAssist.ShadowDepth="Depth3" materialDesign:ShadowAssist.ShadowEdges="All" materialDesign:ShadowAssist.Darken="True" Width="350" MaxHeight="800">
+            <materialDesign:Card.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="#2E2E2E" Offset="0" />
+                    <GradientStop Color="#2C2C2C" Offset="1" />
+                    <GradientStop Color="#242424" Offset="2" />
+                </LinearGradientBrush>
+            </materialDesign:Card.Background>
+            <Grid>
+                <Grid Margin="20">
+                    <Grid.Resources>
+                        <Style TargetType="Button">
+                            <Setter Property="FontFamily" Value="Poppins" />
+                            <Setter Property="BorderThickness" Value="0" />
+
+                        </Style>
+                    </Grid.Resources>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="150"/>
+                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="50"/>
+                    </Grid.RowDefinitions>
+                    <Border Grid.Row="2">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <!--1-->
+                            <Button Content="C" Grid.Row="0" Grid.Column="0" Click="ClearButton_Click" FontSize="35"
+                                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                                    Style="{StaticResource MaterialDesignOutlinedDarkButton}"
+                                    Width="75" Height="75" Foreground="White" />
+                            <Button Content="%" Grid.Row="0" Grid.Column="1" Click="PercentButton_Click" FontSize="30"
+                                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                                    Style="{StaticResource MaterialDesignOutlinedDarkButton}"
+                                    Width="75" Height="75" Foreground="White"/>
+                            <Button Content="±" Grid.Row="0" Grid.Column="2" Click="PlusMinusButton_Click" FontSize="40"
+                                     IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                                    Style="{StaticResource MaterialDesignOutlinedDarkButton}"
+                                    Width="75" Height="75" Foreground="White" />
+                            <Button Content="÷" Grid.Row="0" Grid.Column="3" Click="Operator_Click" FontSize="40"
+                                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                                    Style="{StaticResource MaterialDesignOutlinedDarkButton}"
+                                    Width="75" Height="75" Foreground="#FF3A3A"/>
+                            <!--2-->
+                            <Button Content="7" Grid.Row="1" Grid.Column="0" Click="Button_Click" FontSize="50" 
+                                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                                    Style="{StaticResource MaterialDesignOutlinedDarkButton}"
+                                    Width="75" Height="75" Foreground="White" />
+                            <Button Content="8" Grid.Row="1" Grid.Column="1" Click="Button_Click" FontSize="50" 
+                                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                                    Style="{StaticResource MaterialDesignOutlinedDarkButton}"
+                                    Width="75" Height="75" Foreground="White" />
+                            <Button Content="9" Grid.Row="1" Grid.Column="2" Click="Button_Click" FontSize="50" 
+                                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                                    Style="{StaticResource MaterialDesignOutlinedDarkButton}"
+                                    Width="75" Height="75" Foreground="White" />
+                            <Button Content="×" Grid.Row="1" Grid.Column="3" Click="Operator_Click" FontSize="50"  
+                                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                                    Style="{StaticResource MaterialDesignOutlinedDarkButton}"
+                                    Width="75" Height="75" Foreground="#FF3A3A"/>
+                            <!--3-->
+                            <Button Content="4" Grid.Row="2" Grid.Column="0" Click="Button_Click" FontSize="50" 
+                                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                                    Style="{StaticResource MaterialDesignOutlinedDarkButton}"
+                                    Width="75" Height="75" Foreground="White" />
+                            <Button Content="5" Grid.Row="2" Grid.Column="1" Click="Button_Click" FontSize="50" 
+                                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                                    Style="{StaticResource MaterialDesignOutlinedDarkButton}"
+                                    Width="75" Height="75" Foreground="White" />
+                            <Button Content="6" Grid.Row="2" Grid.Column="2" Click="Button_Click" FontSize="50" 
+                                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                                    Style="{StaticResource MaterialDesignOutlinedDarkButton}"
+                                    Width="75" Height="75" Foreground="White" />
+                            <Button Content="-" Grid.Row="2" Grid.Column="3" Click="Operator_Click" 
+                                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                                    Style="{StaticResource MaterialDesignOutlinedDarkButton}"
+                                    Width="75" Height="75" Foreground="#FF3A3A" FontSize="60"/>
+                            <!--4-->
+                            <Button Content="1" Grid.Row="3" Grid.Column="0" Click="Button_Click" FontSize="50" 
+                                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                                    Style="{StaticResource MaterialDesignOutlinedDarkButton}"
+                                    Width="75" Height="75" Foreground="White" />
+                            <Button Content="2" Grid.Row="3" Grid.Column="1" Click="Button_Click" FontSize="50" 
+                                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                                    Style="{StaticResource MaterialDesignOutlinedDarkButton}"
+                                    Width="75" Height="75" Foreground="White" />
+                            <Button Content="3" Grid.Row="3" Grid.Column="2" Click="Button_Click" FontSize="50" 
+                                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                                    Style="{StaticResource MaterialDesignOutlinedDarkButton}"
+                                    Width="75" Height="75" Foreground="White" />
+                            <Button Content="+" Grid.Row="3" Grid.Column="3" Click="Operator_Click" FontSize="50" 
+                                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                                    Style="{StaticResource MaterialDesignOutlinedDarkButton}"
+                                    Width="75" Height="75" Foreground="#FF3A3A"/>
+                            <!--5-->
+                            <Button Grid.Row="4" Grid.Column="0" Click="Button_Click"
+                                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                                    Style="{StaticResource MaterialDesignOutlinedDarkButton}"
+                                    Width="75" Height="75" Foreground="White">
+                                <materialDesign:PackIcon Kind="CloseBoxOutline" Width="35" Height="35"/>
+                            </Button>
+                            <Button Content="0" Grid.Row="4" Grid.Column="1" Click="Button_Click" FontSize="50" 
+                                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                                    Style="{StaticResource MaterialDesignOutlinedDarkButton}"
+                                    Width="75" Height="75" Foreground="White" />
+                            <Button Content="." Grid.Row="4" Grid.Column="2" Click="FloatingPointNumber_Click" FontSize="50" 
+                                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                                    Style="{StaticResource MaterialDesignOutlinedDarkButton}"
+                                    Width="75" Height="75" Foreground="White" />
+                            <Button Grid.Row="4" Grid.Column="3" Background="#FF3A3A" Click="EqualsButton_Click"
+                                    Height ="60" Width="60" Foreground="White" 
+                                    materialDesign:ButtonAssist.CornerRadius="10"
+                                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                                    Style="{StaticResource MaterialDesignRaisedButton}">
+                                <TextBlock Text="=" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="45"/>
+                            </Button>
+                        </Grid>
+                    </Border>
+                    <TextBox x:Name="resultTextBox" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Margin="10" FontSize="50" HorizontalAlignment="Right" VerticalAlignment="Center" Text="0" IsReadOnly="True"/>
+                </Grid>
+            </Grid>
+        </materialDesign:Card>
     </Grid>
 </Window>
