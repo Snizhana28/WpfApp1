@@ -23,6 +23,18 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
+            string[] colors = { "Navy", "Blue", "Aqua", "Teal", "Olive", "Green", "Lime", "Yellow", "Orange", "Red", "Maroon", "Fuchsia", "Purple", "Black", "Silver", "Gray", "White" };
+            foreach (string colorName in colors)
+            {
+                Button btn = new Button()
+                {
+                    Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString(colorName)),
+                    Content = colorName,
+                    Margin = new Thickness(2),
+                    Foreground = Brushes.White
+                };
+                colorButtons.Children.Add(btn);
+            }
         }
     }
 }
